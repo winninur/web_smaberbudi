@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Berbudi Gantiwarno - Unggul, Berkarakter, Berbudaya</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-dark: #0F2B5B;
+            --blue-primary: #1B4F9C;
+            --blue-medium: #2E6BC6;
+            --blue-light: #5B9BF0;
+            --blue-pale: #D6E8FA;
+            --cream-dark: #F5E6C8;
+            --cream-primary: #FFF5E1;
+            --cream-light: #FFFAF0;
+            --cream-white: #FFFDF8;
+            --gold: #D4A745;
+            --gold-light: #F0D78C;
+            --text-dark: #1A1A2E;
+            --text-body: #4A4A5A;
+            --text-muted: #7A7A8A;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(15,43,91,0.08);
+            --shadow-md: 0 4px 20px rgba(15,43,91,0.12);
+            --shadow-lg: 0 8px 40px rgba(15,43,91,0.16);
+            --shadow-blue: 0 8px 30px rgba(27,79,156,0.25);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-body);
+            background: var(--cream-white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+
+        /* ============ TOPBAR ============ */
+        .topbar {
+            background: var(--blue-dark);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.8rem;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .topbar a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.3s; }
+        .topbar a:hover { color: var(--gold-light); }
+        .topbar i { color: var(--gold); margin-right: 6px; }
+
+        /* ============ NAVBAR ============ */
+        .navbar-main {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            transition: all 0.4s ease;
+        }
+        .navbar-main.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        .navbar-main .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+        }
+        .navbar-main .brand-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-medium));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 12px rgba(27,79,156,0.3);
+        }
+        .navbar-main .brand-text h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        .navbar-main .brand-text small {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .navbar-main .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 24px 16px !important;
+            position: relative;
+            transition: color 0.3s;
+            letter-spacing: 0.02em;
+        }
+        .navbar-main .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            right: 16px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--gold));
+            border-radius: 3px 3px 0 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .navbar-main .nav-link:hover,
+        .navbar-main .nav-link.active {
+            color: var(--blue-primary);
+        }
+        .navbar-main .nav-link:hover::after,
+        .navbar-main .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        .navbar-main .dropdown-menu {
+            border: none;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-md);
+            padding: 8px;
+            margin-top: 0 !important;
+            animation: dropFade 0.25s ease;
+        }
+        @keyframes dropFade {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navbar-main .dropdown-item {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            color: var(--text-body);
+            transition: all 0.2s;
+        }
+        .navbar-main .dropdown-item:hover {
+            background: var(--blue-pale);
+            color: var(--blue-primary);
+        }
+        .navbar-main .dropdown-item i {
+            width: 20px;
+            color: var(--blue-medium);
+        }
+
+        /* ============ HERO ============ */
+        .hero-section {
+            position: relative;
+            min-height: 620px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 50%, var(--blue-medium) 100%);
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .hero-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+        }
+        .hero-bg-shape.s1 { width: 500px; height: 500px; background: var(--gold); top: -150px; right: -100px; }
+        .hero-bg-shape.s2 { width: 350px; height: 350px; background: var(--blue-light); bottom: -100px; left: -80px; }
+        .hero-bg-shape.s3 { width: 200px; height: 200px; background: var(--cream-primary); top: 50%; left: 40%; }
+
+        .hero-carousel .carousel-item { min-height: 620px; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            color: var(--gold-light);
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        .hero-title span { color: var(--gold-light); }
+        .hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--blue-dark);
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.92rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(212,167,69,0.4);
+        }
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212,167,69,0.5);
+            color: var(--blue-dark);
+        }
+        .btn-hero-secondary {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.92rem;
+            transition: all 0.3s;
+        }
+        .btn-hero-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            color: var(--white);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== HERO BULAT KEDIP KEDIK ===== */
+        .hero-image-card {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 4px solid rgba(255,255,255,0.25);
+            margin: 0 auto;
+            animation: heroBlinkGlow 2.5s ease-in-out infinite;
+        }
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes heroBlinkGlow {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 0 rgba(212,167,69,0);
+                border-color: rgba(255,255,255,0.25);
+                opacity: 1;
+                transform: scale(1);
+            }
+            25% {
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px 12px rgba(212,167,69,0.4);
+                border-color: rgba(240,215,140,0.8);
+                opacity: 1;
+                transform: scale(1.02);
+            }
+            50% {
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 0 rgba(212,167,69,0);
+                border-color: rgba(255,255,255,0.15);
+                opacity: 0.6;
+                transform: scale(0.98);
+            }
+            75% {
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 30px 8px rgba(91,155,240,0.35);
+                border-color: rgba(91,155,240,0.6);
+                opacity: 1;
+                transform: scale(1.01);
+            }
+        }
+        /* ===== AKHIR HERO BULAT ===== */
+
+        .hero-float-card {
+            position: absolute;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 14px 20px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: floatCard 3s ease-in-out infinite;
+        }
+        .hero-float-card.fc1 { bottom: 20px; left: -20px; animation-delay: 0s; }
+        .hero-float-card.fc2 { top: 20px; right: -10px; animation-delay: 1.5s; }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .fc-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .fc-icon.blue { background: var(--blue-pale); color: var(--blue-primary); }
+        .fc-icon.gold { background: #FFF3D0; color: var(--gold); }
+        .fc-text h6 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; color: var(--text-dark); }
+        .fc-text small { font-size: 0.72rem; color: var(--text-muted); }
+
+        /* ============ QUICK STATS ============ */
+        .quick-stats {
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        .stats-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s;
+        }
+        .stats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stats-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 1.3rem;
+        }
+        .stats-icon.s-blue { background: var(--blue-pale); color: var(--blue-primary); }
+        .stats-icon.s-gold { background: #FFF3D0; color: var(--gold); }
+        .stats-icon.s-cream { background: var(--cream-primary); color: #B8860B; }
+        .stats-icon.s-green { background: #D1FAE5; color: #059669; }
+        .stats-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blue-dark);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stats-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+
+        /* ============ SECTION COMMON ============ */
+        .section-padding { padding: 80px 0; }
+        .section-cream { background: var(--cream-primary); }
+        .section-white { background: var(--white); }
+        .section-blue { background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary)); color: var(--white); }
+        .section-blue h2, .section-blue h3, .section-blue h4 { color: var(--white); }
+        .section-blue p { color: rgba(255,255,255,0.8); }
+
+        .section-header { margin-bottom: 48px; text-align: center; }
+        .section-header .overline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--blue-medium);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+        .section-header .overline::before,
+        .section-header .overline::after {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        .section-blue .section-header .overline { color: var(--gold-light); }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+        .section-header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============ PROFIL ============ */
+        .profil-about-img {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        .profil-about-img img { width: 100%; height: 400px; object-fit: cover; }
+        .profil-about-img .img-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--blue-dark);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(212,167,69,0.4);
+        }
+        .profil-text h3 { font-size: 1.7rem; margin-bottom: 16px; }
+        .profil-text p { line-height: 1.8; margin-bottom: 14px; }
+
+        .visi-misi-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            height: 100%;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .visi-misi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--gold));
+        }
+        .visi-misi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .vm-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .vm-icon.blue { background: var(--blue-pale); color: var(--blue-primary); }
+        .vm-icon.gold { background: #FFF3D0; color: var(--gold); }
+        .visi-misi-card h4 { font-size: 1.25rem; margin-bottom: 14px; }
+        .visi-misi-card p, .visi-misi-card li { font-size: 0.9rem; line-height: 1.8; color: var(--text-body); }
+        .visi-misi-card ul { padding-left: 0; list-style: none; }
+        .visi-misi-card ul li { padding: 4px 0; padding-left: 24px; position: relative; }
+        .visi-misi-card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--blue-medium);
+            font-size: 0.75rem;
+            top: 8px;
+        }
+
+        /* Struktur */
+        .struktur-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+        .struktur-item {
+            text-align: center;
+            padding: 16px 28px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--blue-pale);
+            min-width: 180px;
+            transition: all 0.3s;
+        }
+        .struktur-item:hover { border-color: var(--blue-medium); box-shadow: var(--shadow-md); }
+        .struktur-item.top { background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark)); color: var(--white); border-color: transparent; }
+        .struktur-item.top h5, .struktur-item.top p { color: var(--white); }
+        .struktur-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 8px;
+            border: 3px solid var(--blue-pale);
+        }
+        .struktur-item.top img { border-color: rgba(255,255,255,0.3); }
+        .struktur-item h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+        .struktur-item p { font-size: 0.72rem; margin: 0; }
+        .struktur-line { width: 2px; height: 24px; background: var(--blue-pale); }
+        .struktur-branch {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            padding-top: 24px;
+        }
+        .struktur-branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 60px);
+            max-width: 400px;
+            height: 2px;
+            background: var(--blue-pale);
+        }
+
+        /* ============ BERITA ============ */
+        .berita-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s;
+            height: 100%;
+        }
+        .berita-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .berita-card .card-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 210px;
+        }
+        .berita-card .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .berita-card:hover .card-img-wrapper img { transform: scale(1.08); }
+        .berita-card .card-category {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--blue-primary);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .berita-card .card-category.gold { background: var(--gold); color: var(--blue-dark); }
+        .berita-card .card-body { padding: 22px; }
+        .berita-card .card-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .berita-card .card-date i { color: var(--blue-medium); margin-right: 4px; }
+        .berita-card .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .berita-card .card-excerpt {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .berita-card .read-more {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s;
+        }
+        .berita-card .read-more:hover { gap: 10px; color: var(--blue-dark); }
+
+        /* ============ GALERI ============ */
+        .galeri-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .galeri-filter .btn-filter {
+            background: var(--white);
+            border: 2px solid var(--blue-pale);
+            color: var(--text-body);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .galeri-filter .btn-filter:hover,
+        .galeri-filter .btn-filter.active {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            color: var(--white);
+        }
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .galeri-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            height: 240px;
+            box-shadow: var(--shadow-sm);
+        }
+        .galeri-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .galeri-item:hover img { transform: scale(1.1); }
+        .galeri-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,43,91,0.85) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .galeri-item:hover .galeri-overlay { opacity: 1; }
+        .galeri-overlay h6 { color: var(--white); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+        .galeri-overlay p { color: rgba(255,255,255,0.7); font-size: 0.75rem; margin: 0; }
+        .galeri-item.tall { grid-row: span 2; height: 100%; }
+
+        /* Lightbox */
+        .lightbox-modal .modal-content {
+            background: transparent;
+            border: none;
+        }
+        .lightbox-modal .modal-body { padding: 0; }
+        .lightbox-modal .btn-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+        .lightbox-modal img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* ============ KESISWAAN ============ */
+        .kesiswaan-tabs .nav-link {
+            color: var(--text-body);
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: 2px solid var(--blue-pale);
+            background: var(--white);
+            margin: 0 6px;
+            transition: all 0.3s;
+        }
+        .kesiswaan-tabs .nav-link.active {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            color: var(--white);
+        }
+        .kesiswaan-tabs .nav-link:hover:not(.active) {
+            border-color: var(--blue-medium);
+            color: var(--blue-primary);
+        }
+
+        .osis-hero {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .osis-hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            top: -100px;
+            right: -50px;
+        }
+        .osis-hero h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 10px; }
+        .osis-hero p { color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+        .osis-structure {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .osis-member {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 20px 14px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .osis-member:hover {
+            transform: translateY(-4px);
+            border-color: var(--blue-pale);
+            box-shadow: var(--shadow-md);
+        }
+        .osis-member.ketua { border-color: var(--gold); background: linear-gradient(to bottom, #FFFDF5, var(--white)); }
+        .osis-member img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 10px;
+            border: 3px solid var(--blue-pale);
+        }
+        .osis-member.ketua img { border-color: var(--gold); }
+        .osis-member h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+        .osis-member span { font-size: 0.72rem; color: var(--text-muted); }
+
+        /* Ekskul Cards */
+        .ekskul-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .ekskul-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .ekskul-card .ekskul-img {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .ekskul-card .ekskul-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .ekskul-card:hover .ekskul-img img { transform: scale(1.08); }
+        .ekskul-card .ekskul-icon {
+            position: absolute;
+            bottom: -20px;
+            right: 16px;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        .ekskul-card .ekskul-body { padding: 28px 20px 20px; }
+        .ekskul-card h5 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .ekskul-card p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+        .ekskul-card .ekskul-schedule {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.76rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            background: var(--blue-pale);
+            padding: 4px 14px;
+            border-radius: 50px;
+        }
+
+        /* ============ KONTAK ============ */
+        .kontak-info-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s;
+            margin-bottom: 16px;
+        }
+        .kontak-info-card:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+        }
+        .kontak-info-card .ki-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .ki-icon.blue { background: var(--blue-pale); color: var(--blue-primary); }
+        .ki-icon.gold { background: #FFF3D0; color: var(--gold); }
+        .ki-icon.green { background: #D1FAE5; color: #059669; }
+        .kontak-info-card h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+        .kontak-info-card p { font-size: 0.84rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+
+        .kontak-form {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .kontak-form .form-control,
+        .kontak-form .form-select {
+            border: 2px solid #E8E8EE;
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            font-size: 0.88rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s;
+        }
+        .kontak-form .form-control:focus,
+        .kontak-form .form-select:focus {
+            border-color: var(--blue-medium);
+            box-shadow: 0 0 0 4px rgba(46,107,198,0.12);
+        }
+        .kontak-form .form-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            color: var(--white);
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.92rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-blue);
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(27,79,156,0.35);
+            color: var(--white);
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 300px;
+            margin-top: 24px;
+        }
+        .map-wrapper iframe { width: 100%; height: 100%; border: 0; }
+
+        /* ============ FOOTER ============ */
+        .footer-main {
+            background: var(--blue-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 60px 0 0;
+        }
+        .footer-main h5 {
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .footer-main p { font-size: 0.85rem; line-height: 1.7; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover { color: var(--gold-light); padding-left: 4px; }
+        .footer-links a i { font-size: 0.7rem; color: var(--gold); }
+
+        .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .footer-social a:hover { background: var(--gold); color: var(--blue-dark); transform: translateY(-3px); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* ============ BACK TO TOP ============ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: var(--blue-primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-blue);
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .back-to-top:hover { background: var(--blue-dark); transform: translateY(-3px); }
+
+        /* ============ TOAST ============ */
+        .custom-toast {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 16px 24px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 9999;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid #059669;
+        }
+        .custom-toast.show { transform: translateX(0); }
+        .custom-toast .toast-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #D1FAE5;
+            color: #059669;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        .custom-toast .toast-text h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+        .custom-toast .toast-text p { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
+
+        /* ============ COUNTER ANIMATION ============ */
+        .counted { }
+
+        /* ============ SCROLL REVEAL ============ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 991px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-image-wrapper { margin-top: 40px; }
+            .hero-image-card { width: 320px; height: 320px; }
+            .hero-float-card { display: none; }
+            .navbar-main .nav-link { padding: 10px 16px !important; }
+            .navbar-main .nav-link::after { display: none; }
+            .section-header h2 { font-size: 1.7rem; }
+            .struktur-branch { gap: 10px; }
+            .struktur-item { min-width: 140px; padding: 12px 16px; }
+        }
+        @media (max-width: 767px) {
+            .hero-section { min-height: auto; }
+            .hero-carousel .carousel-item { min-height: auto; padding: 60px 0; }
+            .hero-title { font-size: 1.8rem; }
+            .hero-desc { font-size: 0.92rem; }
+            .hero-image-card { width: 260px; height: 260px; }
+            .section-padding { padding: 50px 0; }
+            .quick-stats { margin-top: -30px; }
+            .stats-number { font-size: 1.6rem; }
+            .osis-hero { padding: 28px; }
+            .kontak-form { padding: 24px; }
+            .galeri-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .galeri-item { height: 160px; }
+            .galeri-item.tall { grid-row: span 1; height: 160px; }
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .preloader.hidden { opacity: 0; visibility: hidden; }
+        .preloader-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--blue-pale);
+            border-top-color: var(--blue-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="custom-toast" id="toast">
+        <div class="toast-icon"><i class="fas fa-check"></i></div>
+        <div class="toast-text">
+            <h6>Berhasil Terkirim!</h6>
+            <p>Pesan Anda telah kami terima</p>
+        </div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar d-none d-lg-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-4">
+                    <span><i class="fas fa-phone-alt"></i> 0272-3359772</span>
+                    <span><i class="fas fa-envelope"></i> smaberbudigantiwarno@gmail.com</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-main" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="brand-logo">SB</div>
+                <div class="brand-text">
+                    <h5>SMA Berbudi</h5>
+                    <small>Gantiwarno, Klaten</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg-shape s1"></div>
+        <div class="hero-bg-shape s2"></div>
+        <div class="hero-bg-shape s3"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-graduation-cap"></i> PPDB 2025/2026 DIBUKA
+                    </div>
+                    <h1 class="hero-title">
+                        Membentuk Generasi<br><span>Berilmu & Berkarakter</span>
+                    </h1>
+                    <p class="hero-desc">
+                        SMA Berbudi Gantiwarno hadir sebagai lembaga pendidikan yang mengedepankan keunggulan akademik, pembentukan karakter, dan pengembangan bakat siswa secara menyeluruh.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#kontak" class="btn btn-hero-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Daftar Sekarang
+                        </a>
+                        <a href="#profil" class="btn btn-hero-secondary">
+                            <i class="fas fa-play me-2"></i>Kenali Kami
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image-wrapper d-none d-lg-block">
+                    <div class="hero-image-card">
+                        <img src="https://i.imgur.com/J6MhmAf.png" alt="SMA Berbudi Gantiwarno">
+                    </div>
+                    <div class="hero-float-card fc1">
+                        <div class="fc-icon blue"><i class="fas fa-award"></i></div>
+                        <div class="fc-text">
+                            <h6>Akreditasi B</h6>
+                            <small>Berkualitas & Terpercaya</small>
+                        </div>
+                    </div>
+                    <div class="hero-float-card fc2">
+                        <div class="fc-icon gold"><i class="fas fa-trophy"></i></div>
+                        <div class="fc-text">
+                            <h6>100+ Prestasi</h6>
+                            <small>Tingkat Kabupaten-Klaten</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ QUICK STATS ============ -->
+    <div class="quick-stats">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="stats-card">
+                        <div class="stats-icon s-blue"><i class="fas fa-user-graduate"></i></div>
+                        <div class="stats-number" data-target="856">0</div>
+                        <div class="stats-label">Total Siswa</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="stats-card">
+                        <div class="stats-icon s-gold"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="stats-number" data-target="52">0</div>
+                        <div class="stats-label">Tenaga Pengajar</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="stats-card">
+                        <div class="stats-icon s-cream"><i class="fas fa-medal"></i></div>
+                        <div class="stats-number" data-target="120">0</div>
+                        <div class="stats-label">Prestasi Diraih</div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="stats-card">
+                        <div class="stats-icon s-green"><i class="fas fa-school"></i></div>
+                        <div class="stats-number" data-target="25">0</div>
+                        <div class="stats-label">Tahun Berdiri</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ PROFIL ============ -->
+    <section class="section-padding section-cream" id="profil">
+        <div class="container">
+            <!-- Tentang Sekolah -->
+            <div class="section-header reveal">
+                <div class="overline">Profil Sekolah</div>
+                <h2>Mengenal SMA Berbudi Gantiwarno</h2>
+                <p>Lebih dari dua dekade mendedikasikan diri untuk mencetak generasi muda yang unggul dan berakhlak mulia</p>
+            </div>
+
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-lg-5 reveal">
+                    <div class="profil-about-img">
+                        <img src="https://i.imgur.com/PTBnAZZ.png" alt="Gedung SMA Berbudi">
+                        <div class="img-badge"><i class="fas fa-star me-2"></i>Berdiri Sejak 2000</div>
+                    </div>
+                </div>
+                <div class="col-lg-7 profil-text reveal">
+                    <h3>Sejarah Singkat</h3>
+                    <p>SMA Berbudi Gantiwarno didirikan pada tahun 2000 di Kecamatan Gantiwarno, Kabupaten Klaten, Jawa Tengah. Berawal dari semangat masyarakat setempat yang ingin memiliki lembaga pendidikan menengah atas berkualitas, sekolah ini terus berkembang hingga meraih akreditasi B.</p>
+                    <p>Dengan fasilitas yang terus diperbarui dan tenaga pengajar yang kompeten, SMA Berbudi telah meluluskan ribuan alumni yang kini tersebar di berbagai perguruan tinggi ternama dan dunia kerja baik di dalam maupun luar negeri.</p>
+                    <div class="row g-3 mt-3">
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="fc-icon blue" style="width:38px;height:38px;border-radius:10px;font-size:0.9rem;"><i class="fas fa-check"></i></div>
+                                <span style="font-size:0.84rem;font-weight:600;color:var(--text-dark);">Kurikulum Merdeka</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="fc-icon blue" style="width:38px;height:38px;border-radius:10px;font-size:0.9rem;"><i class="fas fa-check"></i></div>
+                                <span style="font-size:0.84rem;font-weight:600;color:var(--text-dark);">Lab Komputer</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="fc-icon blue" style="width:38px;height:38px;border-radius:10px;font-size:0.9rem;"><i class="fas fa-check"></i></div>
+                                <span style="font-size:0.84rem;font-weight:600;color:var(--text-dark);">Perpustakaan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi Misi -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 reveal">
+                    <div class="visi-misi-card">
+                        <div class="vm-icon blue"><i class="fas fa-eye"></i></div>
+                        <h4>Visi</h4>
+                        <p>"Terwujudnya sekolah yang unggul dalam prestasi, berkarakter mulia, berwawasan lingkungan, dan berdaya saing global berdasarkan iman dan takwa."</p>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="visi-misi-card">
+                        <div class="vm-icon gold"><i class="fas fa-bullseye"></i></div>
+                        <h4>Misi</h4>
+                        <ul>
+                            <li>Melaksanakan pembelajaran aktif, kreatif, dan menyenangkan</li>
+                            <li>Membina siswa berakhlak mulia dan berbudaya</li>
+                            <li>Mengembangkan potensi dan bakat siswa secara optimal</li>
+                            <li>Membangun lingkungan sekolah yang bersih, asri, dan nyaman</li>
+                            <li>Menjalin kerjasama dengan masyarakat dan instansi terkait</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Struktur Organisasi -->
+            <div class="text-center reveal">
+                <h3 style="font-size:1.5rem;margin-bottom:32px;">Struktur Organisasi</h3>
+                <div class="struktur-grid">
+                    <div class="struktur-item top">
+                        <img src="https://i.imgur.com/MMbEljl.png" alt="Kepala Sekolah">
+                        <h5>Indiastuti, S.Pd., M.M.</h5>
+                        <p>Kepala Sekolah</p>
+                    </div>
+                    <div class="struktur-line"></div>
+                    <div class="struktur-branch">
+                        <div class="struktur-item">
+                            <img src="https://i.imgur.com/nplnyEU.png" alt="">
+                            <h5>Siti Aminah, S.Pd.</h5>
+                            <p>Wakil Kurikulum</p>
+                        </div>
+                        <div class="struktur-item">
+                            <img src="https://i.imgur.com/XBcZJeL.png" alt="">
+                            <h5>Ahmad Fauzi, S.Pd.</h5>
+                            <p>Wakil Kesiswaan</p>
+                        </div>
+                        <div class="struktur-item">
+                            <img src="https://i.imgur.com/xW8ca8v.png" alt="">
+                            <h5>Endang R., S.Pd.</h5>
+                            <p>Wakil Humas</p>
+                        </div>
+                        <div class="struktur-item">
+                            <img src="https://i.imgur.com/UoXrJXn.png" alt="">
+                            <h5>Bambang S., S.Pd.</h5>
+                            <p>Wakil Sarpras</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BERITA ============ -->
+    <section class="section-padding section-cream" id="berita">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="overline">Berita & Kegiatan</div>
+                <h2>Informasi Terkini</h2>
+                <p>Ikuti perkembangan terbaru dari berbagai kegiatan dan prestasi SMA Berbudi Gantiwarno</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/icADKMS.png" alt="Berita">
+                            <span class="card-category">Prestasi</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 15 Januari 2025</div>
+                            <h5 class="card-title">Praktikum Sains Tingkatkan Kompetensi Siswa</h5>
+                            <p class="card-excerpt">Siswa SMA Berbudi mengikuti kegiatan praktikum di laboratorium untuk mengasah keterampilan, meningkatkan pemahaman konsep sains, serta mempersiapkan diri menghadapi berbagai kompetisi akademik.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/KC1lf6I.jpeg" alt="Berita">
+                            <span class="card-category gold">Kegiatan</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 10 Januari 2025</div>
+                            <h5 class="card-title">Peringatan Hari Pendidikan Nasional: Upacara & Pentas Seni</h5>
+                            <p class="card-excerpt">SMA Berbudi Gantiwarno menggelar upacara peringatan Hardiknas yang diikuti seluruh siswa dan guru, dilanjutkan pentas seni budaya.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/IhmmQcM.png" alt="Berita">
+                            <span class="card-category">OSIS</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 5 Januari 2025</div>
+                            <h5 class="card-title">Foto Bersama Pengurus Organisasi Siswa</h5>
+                            <p class="card-excerpt">Pengurus organisasi siswa mengabadikan momen kebersamaan sebagai bentuk semangat kerja sama dan komitmen dalam menjalankan program sekolah.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/1f9Xq4w.png" alt="Berita">
+                            <span class="card-category gold">Kegiatan</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 1 Januari 2025</div>
+                            <h5 class="card-title">Pelantikan Anggota Pramuka</h5>
+                            <p class="card-excerpt">Kegiatan pelantikan Pramuka dilaksanakan untuk menumbuhkan jiwa disiplin, kepedulian, dan semangat kebersamaan dalam menjalankan nilai-nilai kepramukaan.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/OOl1gFa.jpeg" alt="Berita">
+                            <span class="card-category">Kegiatan</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 28 Desember 2024</div>
+                            <h5 class="card-title">OSIS Gelar LDKS</h5>
+                            <p class="card-excerpt">OSIS menyelenggarakan kegiatan Latihan Dasar Kepemimpinan Siswa (LDKS) sebagai wadah pembinaan karakter, kepemimpinan, dan kerja sama bagi para peserta.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="berita-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://i.imgur.com/d3h7d7p.jpeg" alt="Berita">
+                            <span class="card-category">Kegiatan</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-date"><i class="far fa-calendar-alt"></i> 20 Desember 2024</div>
+                            <h5 class="card-title">Classmeeting</h5>
+                            <p class="card-excerpt">Class Meeting diadakan setelah ujian semester dengan berbagai perlombaan yang bertujuan meningkatkan kekompakan, sportivitas, dan semangat kebersamaan antar kelas.</p>
+                            <a href="#" class="read-more">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALERI ============ -->
+    <section class="section-padding section-white" id="galeri">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="overline">Dokumentasi</div>
+                <h2>Galeri Kegiatan</h2>
+                <p>Momen-momen berharga dari berbagai kegiatan di SMA Berbudi Gantiwarno</p>
+            </div>
+
+            <div class="galeri-filter reveal">
+                <button class="btn-filter active" data-filter="all">Semua</button>
+                <button class="btn-filter" data-filter="akademik">Akademik</button>
+                <button class="btn-filter" data-filter="olahraga">Olahraga</button>
+                <button class="btn-filter" data-filter="seni">Seni & Budaya</button>
+                <button class="btn-filter" data-filter="sosial">Sosial</button>
+            </div>
+
+            <div class="galeri-grid reveal" id="galeriGrid">
+                <div class="galeri-item tall" data-category="akademik" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/kLmvmky.png" data-title="Kegiatan Belajar Mengajar">
+                    <img src="https://i.imgur.com/kLmvmky.png" alt="KBM">
+                    <div class="galeri-overlay">
+                        <div><h6>Kegiatan Belajar Mengajar</h6><p>Akademik</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="olahraga" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/K9f7fov.jpeg" data-title="Pertandingan Futsal">
+                    <img src="https://i.imgur.com/K9f7fov.jpeg" alt="Futsal">
+                    <div class="galeri-overlay">
+                        <div><h6>Clasmeeting</h6><p>Olahraga</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="seni" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/16qhLij.png" data-title="Pentas Tari Tradisional">
+                    <img src="https://i.imgur.com/16qhLij.png" alt="Tari">
+                    <div class="galeri-overlay">
+                        <div><h6>Pentas Tari Tradisional</h6><p>Seni & Budaya</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="sosial" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/LXACbal.png" data-title="Bakti Sosial">
+                    <img src="https://i.imgur.com/LXACbal.png" alt="Baksos">
+                    <div class="galeri-overlay">
+                        <div><h6>Bakti Sosial</h6><p>Sosial</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="akademik" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/icADKMS.png" data-title="Praktikum di Laboratorium">
+                    <img src="https://i.imgur.com/icADKMS.pngg" alt="Lab">
+                    <div class="galeri-overlay">
+                        <div><h6>Praktikum Laboratorium</h6><p>Akademik</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="olahraga" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/7krgxTX.png" data-title="Senam Pagi Bersama">
+                    <img src="https://i.imgur.com/7krgxTX.png" alt="Senam">
+                    <div class="galeri-overlay">
+                        <div><h6>Senam Pagi Bersama</h6><p>Olahraga</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="seni" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/zaAAPBz.jpeg" data-title="Latihan Karawitan">
+                    <img src="https://i.imgur.com/zaAAPBz.jpeg" alt="Karawitan">
+                    <div class="galeri-overlay">
+                        <div><h6>After Pentas Karawitan</h6><p>Seni & Budaya</p></div>
+                    </div>
+                </div>
+                <div class="galeri-item" data-category="akademik" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-img="https://i.imgur.com/MxxlKok.png" data-title="Kegiatan di Perpustakaan">
+                    <img src="https://i.imgur.com/MxxlKok.png" alt="Paskibraka">
+                    <div class="galeri-overlay">
+                        <div><h6>Kegiatan Paskibraka</h6><p>Akademik</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="modal fade lightbox-modal" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body position-relative">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img id="lightboxImg" src="" alt="Lightbox" class="img-fluid">
+                    <div class="text-center mt-3">
+                        <h5 id="lightboxTitle" style="color:var(--white);font-size:1.1rem;" class="mb-0"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ KONTAK ============ -->
+    <section class="section-padding section-blue" id="kontak">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="overline">Hubungi Kami</div>
+                <h2>Ada Pertanyaan?</h2>
+                <p>Jangan ragu untuk menghubungi kami. Kami siap membantu Anda!</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-5 reveal">
+                    <div class="kontak-info-card" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
+                        <div class="ki-icon" style="background:rgba(255,255,255,0.12);color:var(--gold-light);"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h6 style="color:var(--white);">Alamat</h6>
+                            <p style="color:rgba(255,255,255,0.7);">Jl. Raya Gaswangi-Jabung, Desa Jabung, Kecamatan Gantiwarno, Kabupaten Klaten, Jawa Tengah 57451</p>
+                        </div>
+                    </div>
+                    <div class="kontak-info-card" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
+                        <div class="ki-icon" style="background:rgba(255,255,255,0.12);color:var(--gold-light);"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h6 style="color:var(--white);">Telepon</h6>
+                            <p style="color:rgba(255,255,255,0.7);">02723359772<br>0822-2427-0104 (WhatsApp)</p>
+                        </div>
+                    </div>
+                    <div class="kontak-info-card" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
+                        <div class="ki-icon" style="background:rgba(255,255,255,0.12);color:var(--gold-light);"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h6 style="color:var(--white);">Email</h6>
+                            <p style="color:rgba(255,255,255,0.7);">smaberbudigantiwarno@gmail.com.</p>
+                        </div>
+                    </div>
+                    <div class="kontak-info-card" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
+                        <div class="ki-icon" style="background:rgba(255,255,255,0.12);color:var(--gold-light);"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h6 style="color:var(--white);">Jam Operasional</h6>
+                            <p style="color:rgba(255,255,255,0.7);">Senin - Sabtu: 07:00 - 15:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <div class="kontak-form" style="background:var(--white);">
+                        <h4 style="font-size:1.3rem;margin-bottom:24px;">Kirim Pesan</h4>
+                        <form id="kontakForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Nama Lengkap</label>
+                                    <input type="text" class="form-control" placeholder="Masukkan nama Anda" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="email@contoh.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">No. Telepon</label>
+                                    <input type="tel" class="form-control" placeholder="08xxxxxxxxxx">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Subjek</label>
+                                    <select class="form-select">
+                                        <option selected disabled>Pilih subjek</option>
+                                        <option>Informasi PPDB</option>
+                                        <option>Informasi Akademik</option>
+                                        <option>Kerjasama</option>
+                                        <option>Saran & Masukan</option>
+                                        <option>Lainnya</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Pesan</label>
+                                    <textarea class="form-control" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15820.123456789!2d110.6!3d-7.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMzYnMDAuMCJTIDExMMKwMzYnMDAuMCJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="brand-logo" style="width:46px;height:46px;font-size:1rem;">SB</div>
+                        <div>
+                            <h5 style="font-size:1.05rem;margin-bottom:0;">SMA Berbudi</h5>
+                            <small style="color:rgba(255,255,255,0.5);font-size:0.78rem;">Gantiwarno, Klaten</small>
+                        </div>
+                    </div>
+                    <p>Membentuk generasi yang unggul dalam prestasi, berkarakter mulia, dan berwawasan global berdasarkan iman dan takwa.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5>Navigasi</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#profil"><i class="fas fa-chevron-right"></i> Profil</a></li>
+                        <li><a href="#berita"><i class="fas fa-chevron-right"></i> Berita</a></li>
+                        <li><a href="#galeri"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                        <li><a href="#kontak"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <h5>Kontak Kami</h5>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="color:var(--gold);width:16px;"></i> Jl. Raya Gantiwarno No. 12, Klaten</a></li>
+                        <li><a href="tel:0271123456"><i class="fas fa-phone" style="color:var(--gold);width:16px;"></i> (0271) 123-456</a></li>
+                        <li><a href="mailto:info@smaberbudigantiwarno.sch.id"><i class="fas fa-envelope" style="color:var(--gold);width:16px;"></i> info@smaberbudigantiwarno.sch.id</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2025 SMA Berbudi Gantiwarno. Seluruh hak cipta dilindungi. Dibuat dengan <i class="fas fa-heart" style="color:var(--gold);"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-right"></i></button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ========== PRELOADER ==========
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 600);
+        });
+
+        // ========== NAVBAR SCROLL ==========
+        const mainNav = document.getElementById('mainNav');
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 50) {
+                mainNav.classList.add('scrolled');
+            } else {
+                mainNav.classList.remove('scrolled');
+            }
+            if (scrollY > 400) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========== ACTIVE NAV LINK ON SCROLL ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-main .nav-link[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ========== DROPDOWN TAB SWITCH ==========
+        document.querySelectorAll('[data-tab]').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tab = item.getAttribute('data-tab');
+                const target = item.getAttribute('href');
+                if (tab === 'osis') {
+                    new bootstrap.Tab(document.getElementById('osis-tab')).show();
+                } else if (tab === 'ekskul') {
+                    new bootstrap.Tab(document.getElementById('ekskul-tab')).show();
+                }
+                setTimeout(() => {
+                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            });
+        });
+
+        // ========== COUNTER ANIMATION ==========
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-number[data-target]');
+            counters.forEach(counter => {
+                if (counter.classList.contains('counted')) return;
+                const rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    counter.classList.add('counted');
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.floor(current) + '+';
+                    }, 16);
+                }
+            });
+        }
+        window.addEventListener('scroll', animateCounters);
+        animateCounters();
+
+        // ========== SCROLL REVEAL ==========
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', () => setTimeout(revealOnScroll, 700));
+
+        // ========== GALERI FILTER ==========
+        const filterBtns = document.querySelectorAll('.btn-filter');
+        const galeriItems = document.querySelectorAll('.galeri-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                galeriItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = '';
+                        item.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ========== LIGHTBOX ==========
+        const lightboxModal = document.getElementById('lightboxModal');
+        lightboxModal.addEventListener('show.bs.modal', (e) => {
+            const trigger = e.relatedTarget;
+            if (trigger) {
+                document.getElementById('lightboxImg').src = trigger.getAttribute('data-img');
+                document.getElementById('lightboxTitle').textContent = trigger.getAttribute('data-title');
+            }
+        });
+
+        // ========== KONTAK FORM ==========
+        document.getElementById('kontakForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            e.target.reset();
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        });
+
+        // ========== CLOSE MOBILE NAV ON CLICK ==========
+        document.querySelectorAll('.navbar-main .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navCollapse = document.getElementById('navMenu');
+                if (navCollapse.classList.contains('show')) {
+                    new bootstrap.Collapse(navCollapse).hide();
+                }
+            });
+        });
+
+        // ========== FADE IN KEYFRAME (for galeri filter) ==========
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `@keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }`;
+        document.head.appendChild(styleSheet);
+    </script>
+</body>
+</html>
